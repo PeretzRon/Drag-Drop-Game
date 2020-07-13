@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="resources/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <script defer src='vendors/js/all.min.js'></script>
+    <title>Machon Noam</title>
+</head>
+<body>
+<main class="main">
+    <div class="alert">
+        <h1>Machon Noam game</h1>
+        <button id="start-game-btn" class="btn btn-full">Start</button>
+        <span class="fas fa-gamepad icon-alert"></span>
+    </div>
+
+    <nav class="bar">
+        <div id="count-down">
+            <div class="control-time">
+                <span class="fas fa-pause icon-play-pause"></span>
+            </div>
+            <div class="game-time">
+                <p id="count-down-timer">10:00</p>
+            </div>
+        </div>
+        <div class="drag-item-left-time ">
+            <p id="drag-item-time"><span class="number-time-left">4</span> second left to drag the element</p>
+        </div>
+
+        <div class="score">
+            <p id="score">score: 0</p>
+        </div>
+    </nav>
+
+    <div id="main">
+        <img src="resources/img/apple.png" alt="apple-logo" id="elementA" draggable="true" class="draggable invisible"/>
+        <img src="resources/img/android.png" alt="android-logo" id="elementB" draggable="true"
+             class="draggable invisible"/>
+        <div class="drop-zone"></div>
+    </div>
+</main>
+
+
+<script src="app.js"></script>
+</body>
+</html>

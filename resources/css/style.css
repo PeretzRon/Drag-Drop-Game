@@ -1,0 +1,246 @@
+/* ------------------------------------------------ */
+/* Basic Setup */
+/* ------------------------------------------------ */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+*:focus {
+    outline: none;
+}
+
+html {
+    font-family: 'Lato', sans-serif;
+}
+
+/* ------------------------------------------------ */
+/* Nav Bar */
+/* ------------------------------------------------ */
+.bar {
+    background-color: #28bbe9;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+
+#count-down {
+    display: flex;
+}
+
+.control-time {
+    align-self: center;
+    font-size: 1.2rem;
+}
+
+.icon-play-pause {
+    color: #004853;
+    margin-left: 20px;
+    align-self: center;
+    cursor: pointer;
+}
+
+.icon-alert {
+    font-size: 3rem;
+    margin: 20px;
+    color: #1e7da5;
+}
+
+.game-time {
+    display: inline-block;
+    padding: 10px;
+    font-size: 2.3rem;
+    font-weight: bold;
+    color: #004853;
+    margin: 0 10px;
+}
+
+.score {
+    align-self: center;
+    margin: 0 20px;
+    font-size: 2rem;
+    color: #004853;
+    font-weight: bold;
+}
+
+.drag-item-left-time {
+    align-self: center;
+    opacity: 0.2;
+}
+
+.number-time-left {
+    font-size: 1.2rem;
+    font-weight: bold;
+
+}
+
+/* ------------------------------------------------ */
+/* Elements */
+/* ------------------------------------------------ */
+.draggable {
+    display: inline-block;
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+}
+
+.center {
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%);
+}
+
+.drop-zone {
+    position: fixed;
+    height: 200px;
+    width: 100vw;
+    bottom: 0;
+    left: 0;
+    background-color: lightblue;
+    clip-path: polygon(45% 0, 54% 15%, 71% 0, 80% 13%, 100% 0, 100% 100%, 0 100%, 0 0, 12% 7%, 21% 11%);
+}
+
+.invisible {
+    display: none !important;
+}
+
+.blink-green {
+    animation: borderBlinkGreen .5s linear 3;
+}
+
+.blink-red {
+    animation: borderBlinkRed .5s linear 3;
+}
+
+.alert {
+    display: inline-flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    z-index: 5;
+    background-color: #edf5fa;
+    width: 70%;
+    border: 1px solid #ccc;
+    left: 15%;
+    top: 30%;
+    padding: 16px;
+    animation: fade-in 0.5s ease-in;
+    border-radius: 10px;
+    box-shadow: 0 0 26px 0 rgba(0, 0, 0, 0.75);
+}
+
+
+.alert h1 {
+    text-align: center;
+}
+
+.alert p {
+    margin: 20px;
+    font-size: 1.2rem;
+}
+
+#main img {
+    background-size: cover;
+    object-fit: cover;
+}
+
+/* ------------------------------------------------ */
+/* Dragging */
+/* ------------------------------------------------ */
+.cancel-drag {
+    pointer-events: none;
+}
+
+.drag-start {
+    opacity: .1;
+}
+
+
+/* ------------------------------------------------ */
+/* Buttons */
+/* ------------------------------------------------ */
+.btn {
+    display: inline-block;
+    padding: 10px 30px;
+    text-decoration: none;
+    border-radius: 200px;
+    transition: background-color 0.2s, border 0.2s, color 0.2s;
+    cursor: pointer;
+    margin: 50px 0 10px 0;
+    text-transform: uppercase;
+}
+
+.btn-full {
+    background-color: #0bb2f8;
+    border: 1px solid #0bb2f8;
+    color: #1d1c1c;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #2096cb;
+}
+
+.btn-full:hover {
+    border: 1px solid #2096cb;
+}
+
+
+/* ------------------------------------------------ */
+/* Keyframes */
+/* ------------------------------------------------ */
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: translateY(-100vh);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes borderBlinkGreen {
+    50% {
+        background-color: #5e9d29
+    }
+}
+
+@keyframes borderBlinkRed {
+    50% {
+        background-color: #fd2c2c
+    }
+}
+
+/* ------------------------------------------------ */
+/* Media Queries */
+/* ------------------------------------------------ */
+@media screen and (max-width: 550px) {
+
+    .bar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .bar div {
+        margin: 2px 0;
+    }
+
+}
+
+@media (min-width: 550px) {
+    .alert {
+        width: 500px;
+        left: calc(50% - 250px);
+    }
+}
+
+
